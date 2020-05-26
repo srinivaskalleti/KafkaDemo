@@ -10,7 +10,7 @@ import com.kafkademo.domain.User;
 import com.kafkademo.service.Producer;
 
 @RestController
-@RequestMapping("kafka")
+@RequestMapping("/kafka/api/v1/")
 public class UserController {
 
 	@Autowired

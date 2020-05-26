@@ -3,7 +3,6 @@ package com.kafkademo.config;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.apache.el.util.ConcurrentCache;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.serialization.StringDeserializer;
@@ -49,7 +48,7 @@ public class KafkaConfig {
 	
 	@Bean
 	public ConcurrentKafkaListenerContainerFactory<String, User> kafkaListener(){
-		ConcurrentKafkaListenerContainerFactory factory = new ConcurrentKafkaListenerContainerFactory();
+		ConcurrentKafkaListenerContainerFactory<String, User> factory = new ConcurrentKafkaListenerContainerFactory<>();
 		factory.setConsumerFactory(consumerFactory());
 		return factory;
 	}
